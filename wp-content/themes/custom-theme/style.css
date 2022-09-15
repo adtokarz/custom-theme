@@ -1,0 +1,13 @@
+/*
+Theme Name: Custom-theme
+Author: Adrian
+Version: 0.1
+Description: Custom theme
+*/
+
+*{
+    background-color: rgb(70, 70, 70);
+}
+p{
+    color: red;
+}
