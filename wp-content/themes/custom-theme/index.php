@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bieszczadomki</title>
 
-    <link href="<?php echo get_bloginfo('template_directory') ?>/style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<?php wp_head() ?>
 </head>
 <body>
-<?php get_header() ?>
-    <p>dasdas</p>
-    <footer>
 
-<?php get_footer() ?>
-<?php wp_footer() ?>
-    </footer>
+    <?php 
+        if(have_posts() ){
+           while( have_posts() ){
+            the_post();
+                ?>
+                    <article style="border: 1px solid black; margin: 5px;">
+                        <?php the_title('<h3>', '</h3>'); ?>
+                        <?php the_excerpt(); ?>
+                        <?php the_shortlink('czytaj dalej'); ?>
+                    </article>
+
+                <?php
+           }
+        }
+    ?>
+
 </body>
 </html>
